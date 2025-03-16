@@ -5,7 +5,87 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+/* Base styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Logo styling */
+.logo h1 {
+    margin: 0;
+}
+
+/* Nav menu */
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Hamburger menu - hidden by default on desktop */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Mobile view - Media query */
+@media (max-width: 768px) {
+    /* Hide the nav links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-links li {
+        text-align: center;
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Show hamburger menu on small screens */
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* Show the nav links when active */
+    .nav-links.active {
+        display: flex;
+    }
+}
 /* Default (Mobile-First) */
 body {
     font-size: 16px;
