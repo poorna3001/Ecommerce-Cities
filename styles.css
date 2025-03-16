@@ -83,7 +83,7 @@ nav ul li a {
 
     /* Show the nav links when active */
     .nav-links.active {
-        display: flex;
+        display: block;
     }
 }
 /* Default (Mobile-First) */
