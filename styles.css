@@ -45,7 +45,7 @@ nav ul li a {
 
 /* Hamburger menu - hidden by default on desktop */
 .hamburger-menu {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
@@ -55,13 +55,23 @@ nav ul li a {
     width: 25px;
     height: 3px;
     background-color: white;
+    position-area: right;
 }
 
 /* Mobile view - Media query */
 @media (max-width: 768px) {
+    /* Position hamburger menu in the top-right corner */
+    .hamburger-menu {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+    }
+
     /* Hide the nav links by default */
     .nav-links {
-        display: flex;
+        display: none;
         flex-direction: column;
         width: 100%;
         background-color: #333;
@@ -70,24 +80,20 @@ nav ul li a {
         left: 0;
     }
 
+    /* Show the nav links when active */
+    .nav-links.active {
+        display: none;
+    }
+
     .nav-links li {
         display: flex;
         text-align: center;
         width: 100%;
         padding: 15px;
     }
-
-    /* Show hamburger menu on small screens */
-    .hamburger-menu {
-        display: flex;
-        
-    }
-
-    /* Show the nav links when active */
-    .nav-links.active {
-        display: none;
-    }
 }
+
+
 /* Default (Mobile-First) */
 body {
     font-size: 16px;
