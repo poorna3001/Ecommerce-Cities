@@ -20,10 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Mobile Menu Toggle (Hamburger Menu)
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navLinks = document.getElementById('nav-links');
+   // JavaScript to toggle the menu on click
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const navLinks = document.querySelector('.nav-links');
 
-    hamburgerMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-links');
-    });
+hamburgerMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
 });
