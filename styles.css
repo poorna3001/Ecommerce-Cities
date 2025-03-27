@@ -5,205 +5,151 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-/* Base styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
+    padding: 20px;
+    background: #333;
     color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: 0.3s ease; /* Smooth transition */
 }
 
-/* Logo styling */
 .logo h1 {
     margin: 0;
+    font-size: 1.5em;
 }
 
-/* Nav menu */
+/* Navigation Links */
 nav ul {
+    list-style: none;
     display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
+    gap: 15px;
+    text-align: left;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1em;
+    transition: color 0.3s;
+    
 }
 
-/* Hamburger menu - hidden by default on desktop */
+nav ul li a:hover {
+    color: #ff5722;
+}
+
+/* Hamburger Menu */
 .hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    display: none; /* Initially hidden */
     cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    left: 20px; /* Align it to the left corner */
+    top: 20px; /* Optional: You can fine-tune the vertical positioning */
+    transform: translateY(-50%);
+    z-index: 999; /* Ensures the hamburger is above other elements */
 }
 
 .hamburger-menu .bar {
-    width: 25px;
-    height: 3px;
     background-color: white;
-    position-area: right;
-}
-
-/* Mobile view - Media query */
-@media (max-width: 768px) {
-    /* Position hamburger menu in the top-right corner */
-    .hamburger-menu {
-        display: flex;
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        cursor: pointer;
-    }
-
-    /* Hide the nav links by default */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
-    }
-
-    /* Show the nav links when active */
-    .nav-links.active {
-        display: none;
-    }
-
-    .nav-links li {
-        display: flex;
-        text-align: center;
-        width: 100%;
-        padding: 15px;
-    }
-}
-
-
-/* Default (Mobile-First) */
-body {
-    font-size: 16px;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 20px;
-}
-
-.hero-buttons button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background: blue;
-    color: white;
-    cursor: pointer;
-}
-
-/* Sections */
-section {
-    padding: 20px;
-}
-
-/* Feature Cards */
-.feature-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.feature-card {
-    background: #f8f8f8;
-    padding: 15px;
+    height: 4px;
+    width: 100%;
     border-radius: 5px;
 }
 
-/* Responsive Design */
-
-/* Tablet View */
-@media (min-width: 768px) {
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
     header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 15px 50px;
+        flex-direction: column; /* Stack the header content vertically on mobile */
+        align-items: flex-start; /* Align items to the start of the container */
+        padding: 15px 20px; /* Adjust padding for mobile */
     }
-
+    .hero {
+        background-image: url('images/home.png'); /* You can replace this with a smaller mobile-specific image */
+        background-size: cover;
+        background-position: center;
+        height: 60vh; /* Reduced height for mobile */
+    }
     .nav-links {
-        flex-direction: row;
-        gap: 15px;
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        text-align: left;
+        margin-top: 20px;
     }
 
-    .hero {
-        padding: 50px;
+    .hamburger-menu {
+        display: flex; /* Show hamburger on mobile */
     }
 
-    .feature-cards {
-        grid-template-columns: 1fr 1fr;
+    .nav-links.active {
+        display: flex; /* Show navigation links when active */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
     }
 }
 
-/* Desktop View */
-@media (min-width: 1024px) {
+
+
+/* Tablet Layout */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .feature-cards {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .hero {
-        padding: 80px;
-    }
-
-    .about-text,
-    .about-image {
-        width: 50%;
-    }
-
-    .seller-text,
-    .seller-image {
-        width: 50%;
-    }
-
-    section {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
+    }
+
+    .feature-card {
+        flex-basis: 48%;
+        margin-bottom: 20px;
     }
 }
+
+/* Desktop Layout */
+@media screen and (min-width: 1025px) {
+    .about {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .feature-cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .feature-card {
+        flex-basis: 19%;
+    }
+}
+
+
 
 /* General Styles */
 body {
@@ -288,7 +234,7 @@ section {
 /* Heading Animation */
 .hero h1 {
     font-size: 3em;
-    color: #333;
+    color: #fcfafa;
     opacity: 0;
     transform: translateX(-50px);
     animation: slideInLeft 1s ease-out forwards;
@@ -296,7 +242,7 @@ section {
 
 .hero h2 {
     font-size: 2.5em;
-    color: #555;
+    color: #f3f0f0;
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
     animation-delay: 0.5s;
@@ -305,33 +251,33 @@ section {
 /* Paragraph Animation */
 .hero p {
     font-size: 1.2em;
-    color: #666;
+    color: #faf9f9;
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
-    .icon {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
-        vertical-align: middle;
-      }
-      .icon-check {
-        background-image: url('images/check.png');
-        background-size: contain;
-      }
-      .icon-globe {
-        background-image: url('images/globe.png');
-        background-size: contain;
-      }
-      .icon-wallet {
-        background-image: url('images/wallet.png');
-        background-size: contain;
-      }
-      .icon-journey{
-        background-image: url('images/journey.png');
-        background-size: contain;
-      }
 }
+.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+.icon-check {
+    background-image: url('images/check.png');
+    background-size: contain;
+  }
+  .icon-globe {
+    background-image: url('images/globe.png');
+    background-size: contain;
+  }
+  .icon-wallet {
+    background-image: url('images/wallet.png');
+    background-size: contain;
+  }
+  .icon-journey{
+    background-image: url('images/journey.png');
+    background-size: contain;
+  }
 
 /* Staggered Animation Delays */
 .hero p:nth-of-type(1) { animation-delay: 0.7s; }
@@ -451,6 +397,7 @@ section {
       }
 }
 
+
 /* About Image */
 .about-image {
     flex: 1;
@@ -549,6 +496,13 @@ section {
     animation: fadeInUp 1s ease-out forwards;
 }
 
+#features h2{
+    
+    color: white;
+    
+    animation: fadeIn 1s ease-in forwards;
+}   
+
 /* Feature Cards Layout */
 .feature-cards {
     display: flex;
@@ -560,7 +514,7 @@ section {
 
 /* Individual Feature Card */
 .feature-card {
-    background: white;
+    background: rgb(168, 168, 109);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
