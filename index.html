@@ -32,29 +32,29 @@
             </ul>
         </nav>
     </header>
-    <div style="height: 100vh; background: url('images/hero.webp') no-repeat center center/cover;"></div>
-    
+    <div style="height: 100vh; background: url('images/hero.webp') no-repeat center center/cover;"></div>    
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
+    <section id="home" class="hero" style="background-image: url('images/home.png'); background-size: cover; background-position: center; position: relative;">
+        <div class="hero-content" style="position: relative; z-index: 2; color: white;">
             <h1>Transforming Local Businesses into Digital Marketplaces</h1>
             <h2>Empowering Local Businesses, Connecting Customers</h2>
             <p>Bringing a seamless e-commerce experience to Tier 3 and 4 cities...</p>
             <p>
                 <strong>
-                  <span class="icon icon-check"></span> Easy to Use |
-                  <span class="icon icon-globe"></span> Localized Solutions |
-                  <span class="icon icon-wallet"></span> Affordable & Accessible
+                    <span class="icon icon-check"></span> Easy to Use |
+                    <span class="icon icon-globe"></span> Localized Solutions |
+                    <span class="icon icon-wallet"></span> Affordable & Accessible
                 </strong>
-              </p>
+            </p>
             <p><span class="icon icon-journey"></span> Start Your Digital Journey Today! <span class="icon icon-journey"></span> </p>
             <div class="hero-buttons">
                 <button>Register as a Seller</button>
                 <button>Explore Products</button>
             </div>
         </div>
+        <div style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
     </section>
-
+    
     <!-- About Section -->
     <section id="about">
         <div class="about-text">
@@ -72,9 +72,9 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features">
+    <section id="features" style="background-image: url('images/key.png'); background-size: cover; background-position: center; position: relative;">
         <h2>Key Features</h2>
-        <div class="feature-cards">
+        <div class="feature-cards" style="position: relative; z-index: 2; color: white;">
             <div class="feature-card"><img src="images/globe.png" alt="Globe Icon" style="width: 20px; height: 20px; vertical-align: middle;" /> <strong>Localized Approach:</strong> Supports multiple regional languages for easy navigation.</div>
             <div class="feature-card"><img src="images/cube.png" alt="Cube Icon" style="width: 20px; height: 20px; vertical-align: middle;" /> <strong>Easy Inventory Management:</strong> Simple tools to list and manage products.</div>
             <div class="feature-card"><img src="images/wallet.png" alt="Wallet Icon" style="width: 20px; height: 20px; vertical-align: middle;" /> <strong>Affordable Payment Options:</strong> Cash-on-delivery, UPI, and wallet support.</div>
@@ -83,6 +83,7 @@
         </div>
         
         <button>Discover All Features</button>
+        <div style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
     </section>
 
     <!-- Seller Benefits Section -->
@@ -93,7 +94,7 @@
                 <li><img src="images/no.png" alt="no techinical Icon" style="width: 20px; height: 20px; vertical-align: middle;" /><strong>No Technical Skills Needed:</strong> Start selling in just a few clicks.</li>
                 <li><img src="images/marketing.png" alt="Marketing Icon" style="width: 20px; height: 20px; vertical-align: middle;" /> <strong>Marketing Support:</strong> Get featured on our platform and social media.</li>
                 <li><img src="images/data.png" alt="Data Icon" style="width: 20px; height: 20px; vertical-align: middle;" /> <strong>Data-Driven Insights:</strong> Understand customer demand and sales trends.</li>
-                <li><img src="images/delivery.png" alt="Delivery Icon" style="width: 20px; height: 20px; vertical-align: middle;" /> <strong>Reliable Delivery Partners:</strong> Hassle-free logistics for faster deliveries.</li>
+                <li><img src="images/deleivery.png" alt="Delivery Icon" style="width: 20px; height: 20px; vertical-align: middle;" /> <strong>Reliable Delivery Partners:</strong> Hassle-free logistics for faster deliveries.</li>
                 <li><img src="images/payment.jpg" alt="Payment Icon" style="width: 20px; height: 20px; vertical-align: middle;" /> <strong>Secure Payments:</strong> Receive your earnings on time, every time.</li>
             </ul>
             
@@ -133,14 +134,15 @@
     </section>
 
     <!-- Success Stories Section -->
-    <section id="success">
+    <section id="success" style="background-image: url('images/success.webp'); background-size: cover; background-position: right; position: relative;">
         <h2>Success Stories</h2>
-        <div class="testimonial-cards">
+        <div class="testimonial-cards" style="position: relative; z-index: 2; color: white;">
             <blockquote>"I never thought my small store could reach so many customers. Thanks to this platform, I now deliver across my district!" - Ramesh</blockquote>
             <blockquote>"Online shopping has never been this easy! I can now buy fresh local products without stepping out of my home." - Priya</blockquote>
             <h2><img src="images/pin.png" alt="Pin Icon" style="width: 20px; height: 20px; vertical-align: middle;" /> Your Success Story Could Be Next!</h2>
         </div>
         <button>Read More Stories</button>
+        <div style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
     </section>
 
     <!-- Contact Section -->
@@ -152,12 +154,10 @@
         <p><img src="images/ns.jpg" alt="assistance Icon" style="width: 30px; height: 30px; vertical-align: middle;" /> Need Assistance? We’re Here to Help!</p>
         <button>Get in Touch</button>
     </section>
-
-    <!-- Footer -->
+    <!--Footer-->
     <footer>
         <p>© 2025 E-Commerce Platform for Tier 3 & 4 Cities | Privacy Policy | Terms & Conditions</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
