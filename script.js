@@ -4,28 +4,36 @@ document.addEventListener("DOMContentLoaded", () => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
             const targetId = this.getAttribute("href").substring(1);
-            document.getElementById(targetId).scrollIntoView({
-                behavior: "smooth"
-            });
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
         });
     });
 
     // Hero Buttons Alert Actions
-    document.querySelector(".hero-buttons button:first-child").addEventListener("click", () => {
-        alert("Redirecting to Seller Registration");
+    const heroButtons = document.querySelector(".hero-buttons");
+    if (heroButtons) {
+        const firstButton = heroButtons.querySelector("button:first-child");
+        const lastButton = heroButtons.querySelector("button:last-child");
+
+        if (firstButton) {
+            firstButton.addEventListener("click", () => {
+                alert("Redirecting to Seller Registration");
+            });
+        }
+
+        if (lastButton) {
+            lastButton.addEventListener("click", () => {
+                alert("Exploring Products");
+            });
+        }
+    }
+
+    document.getElementById("hamburger-menu").addEventListener("click", function() {
+        // Toggle the 'active' class to show/hide the navigation menu
+        document.getElementById("nav-links").classList.toggle("active");
     });
-
-    document.querySelector(".hero-buttons button:last-child").addEventListener("click", () => {
-        alert("Exploring Products");
-    });
-
-    // Mobile Menu Toggle (Hamburger Menu)
-   // JavaScript to toggle the menu on click
-const hamburgerMenu = document.querySelector('.hamburger-menu');
-const navLinks = document.querySelector('.nav-links');
-
-hamburgerMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
 });
